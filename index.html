@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay Shankar - CV</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+            background: #ddd;
+            display: inline-block;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+        
+        section {
+            padding: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .section-content {
+            margin-left: 1rem;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .item-subtitle {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .skill {
+            background: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .badge i {
+            color: var(--primary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .project-link i {
+            margin-left: 0.3rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            header {
+                padding: 2rem 1.5rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="IMG_25-04-22_23-36-55-975.jpg" height="200" alt="">
+            <h1>ABHAY SHANKAR</h1>
+            <div class="title">Bachelor of Computer Science | Ranchi University</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>abhayupadhayay05@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-7488415643</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span</span>
+                </div>
+            </div>
+        </header>
+        
+        <section>
+            <h2>ACADEMIC DETAILS</h2>
+            <div class="section-content">
+                <div class="education-item">
+                    <div class="item-header">
+                        <div class="item-title">Bachelor of Computer Science</div>
+                        <div class="item-subtitle">2024 - 2027</div>
+                    </div>
+                    <div class="item-subtitle">Ranchi University</div>
+                    <div>Current CGPA: 8.4/10 (as of June 2025)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>INTERNSHIPS & CERTIFICATIONS</h2>
+            <div class="section-content">
+                <div class="badges-container">
+                    <div class="badge">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft Learn AI Fundamentals – 4 Badges Earned</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fab fa-google"></i>
+                        <span>Google Cloud Skills Badge</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <p>AI Overview, Azure Machine Learning, NLP on Azure, Computer Vision Basics</p>
+                    <p>Building Real World AI Applications using Gemini and Imagen</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>TECHNICAL SKILLS</h2>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill">C++</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">SQL</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">Git</div>
+                    <div class="skill">GitHub</div>
+                    <div class="skill">VS Code</div>
+                    <div class="skill">Azure AI</div>
+                    <div class="skill">Google Cloud</div>
+                    <div class="skill">Vertex AI</div>
+                    <div class="skill">Prompt Engineering</div>
+                    <div class="skill">UI Cloning</div>
+                    <div class="skill">3D Design</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>PROJECTS</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-title">Weather App Using OpenWeather API</div>
+                    <p>Weather forecast app using HTML, CSS & JavaScript's Fetch API</p>
+                    <a href="https://abhayupadhyay05.github.io/CityWeatherForecast/" class="project-link">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                 <div class="project-card">
+                    <div class="project-title">3D Personal Portfolio Website</div>
+                    <p>A multi-page 3D animated portfolio with interactive sliders</p>
+                    <a href="https://abhayupadhyay05.github.io/MyPortfolio/" class="project-link">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>HACKATHONS & COMPETITIONS</h2>
+            <div class="section-content">
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div class="item-title">Coding OverNite @ IIT Kharagpur</div>
+                        <div class="item-subtitle">2024</div>
+                    </div>
+                    <p>Ranked 9th</p>
+                </div>
+                <div class="experience-item">
+                    <div class="item-title">Active Contributor in Prompt Engineering Events</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div>📍 Ranchi, Jharkhand, India</div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-globe"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
